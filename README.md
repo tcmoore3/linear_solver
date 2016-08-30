@@ -1,4 +1,4 @@
-Linear Solver
+Linear Solver [![Build Status](https://travis-ci.org/tcmoore3/linear_solver.svg?branch=master)](https://travis-ci.org/tcmoore3/linear_solver)
 -------------
 Simple solver for systems of linear equations.
 
