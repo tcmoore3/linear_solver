@@ -1,1 +1,1 @@
-from linear_solver.linear_solver import solve_linear_system
+from linear_solver.core import solve_linear_system

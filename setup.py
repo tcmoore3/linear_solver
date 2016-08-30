@@ -1,4 +1,4 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 from setuptools.command.test import test as TestCommand
 import sys
 
@@ -23,10 +23,11 @@ setup(name='linear_solver',
       author='Timothy C. Moore',
       author_email='timothy.c.moore@vanderbilt.edu',
       license='MIT',
-      packages=['linear_solver'],
+      packages=find_packages(),
+      package_data={'linear_solver.testing': ['reference/*']},
       install_requires=requirements,
       zip_safe=False,
-      test_suite='linear_solver/tests',
+      test_suite='linear_solver',
       cmdclass={'test': PyTest},
       extras_require={'utils': ['pytest']},
 )
