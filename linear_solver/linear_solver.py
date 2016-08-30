@@ -1,5 +1,6 @@
 import numpy as np
 
+
 def check_inverse(coeffs):
     det = np.linalg.det(coeffs)
     #import ipdb; ipdb.set_trace()

@@ -26,7 +26,7 @@ setup(name='linear_solver',
       packages=['linear_solver'],
       install_requires=requirements,
       zip_safe=False,
-      test_suite='tests',
+      test_suite='linear_solver/tests',
       cmdclass={'test': PyTest},
       extras_require={'utils': ['pytest']},
 )
