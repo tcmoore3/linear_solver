@@ -37,9 +37,6 @@ def handle_input(coefficients):
     elif isinstance(coefficients, np.ndarray):
         _matrix_sanity(coefficients)
         return np.matrix(coefficients)
-    elif isinstance(coefficients, np.matrix):
-        _matrix_sanity(coefficients)
-        return coefficients
     else:
         raise(TypeError, 'Unsupported input type.')
 
