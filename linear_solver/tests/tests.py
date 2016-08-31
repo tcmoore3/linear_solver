@@ -26,38 +26,49 @@ class TestSolverMethods(unittest.TestCase):
 
     def test_bad_list_input(self):
         with self.assertRaises(AssertionError):
-            x = solve_linear_system([
+            solve_linear_system([
                 [22, 22, -1, 0],
                 [0.1*22, 22*0.9, -0.6, 0],
                 [22/0.68, 22/0.78, 500*3.78541]])
 
     def test_good_array_input(self):
-        x = solve_linear_system(
+        solve_linear_system(
             np.asarray([
             [22, 22, -1, 0],
             [0.1*22, 22*0.9, -0.6, 0],
             [22/0.68, 22/0.78, 0, 500*3.78541]]))
 
     def test_bad_array_input(self):
-        x = solve_linear_system(
-            np.asarray([
-            [22, 22, -1, 0],
-            [0.1*22, 22*0.9, -0.6, 0],
-            [22/0.68, 22/0.78, 0, 500*3.78541]]))
+        with self.assertRaises(AssertionError):
+            solve_linear_system(
+                np.asarray([
+                [22, 22, -1, 0],
+                [0.1*22, 22*0.9, -0.6, 0],
+                [22/0.68, 22/0.78, 500*3.78541]]))
 
     def test_good_matrix_input(self):
-        x = solve_linear_system(
+        solve_linear_system(
             np.matrix([
             [22, 22, -1, 0],
             [0.1*22, 22*0.9, -0.6, 0],
             [22/0.68, 22/0.78, 0, 500*3.78541]]))
 
     def test_bad_matrix_input(self):
-        x = solve_linear_system(
-            np.matrix([
-            [22, 22, -1, 0],
-            [0.1*22, 22*0.9, -0.6, 0],
-            [22/0.68, 22/0.78, 0, 500*3.78541]]))
+        with self.assertRaises(AssertionError):
+            solve_linear_system(
+                np.matrix([
+                [22, 22, -1, 0],
+                [0.1*22, 22*0.9, -0.6, 0],
+                [22/0.68, 22/0.78, 500*3.78541]]))
+
+    def test_bad_input_types(self):
+        with self.assertRaises(TypeError):
+            solve_linear_system(69)
+            solve_linear_system((6, 9))
+            solve_linear_system(69.0)
+            solve_linear_system({6: 9, 'name': 'George'})
+
+
 
 class TestUtils(unittest.TestCase):
     def test_get_fn(self):

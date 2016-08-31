@@ -34,6 +34,9 @@ def handle_input(coefficients):
         return _load_coefficients(coefficients)
     elif isinstance(coefficients, list):
         return _list_to_matrix(coefficients)
+    elif isinstance(coefficients, np.matrix):
+        _matrix_sanity(coefficients)
+        return coefficients
     elif isinstance(coefficients, np.ndarray):
         _matrix_sanity(coefficients)
         return np.matrix(coefficients)
