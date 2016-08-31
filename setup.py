@@ -12,7 +12,7 @@ class PyTest(TestCommand):
 
     def run_tests(self):
         import pytest
-        errcode = pytest.main(['linear_solver'])
+        errcode = pytest.main(['linear_solver/tests/tests.py'])
         sys.exit(errcode)
 
 
