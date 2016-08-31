@@ -59,5 +59,10 @@ class TestSolverMethods(unittest.TestCase):
             [0.1*22, 22*0.9, -0.6, 0],
             [22/0.68, 22/0.78, 0, 500*3.78541]]))
 
+class TestUtils(unittest.TestCase):
+    def test_get_fn(self):
+        with self.assertRaises(ValueError):
+            get_fn('i-will-never-have-a-file-named-like-this-one.txt')
+
 if __name__ == '__main__':
     unittest.main()
