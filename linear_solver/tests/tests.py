@@ -64,8 +64,11 @@ class TestSolverMethods(unittest.TestCase):
     def test_bad_input_types(self):
         with self.assertRaises(TypeError):
             solve_linear_system(69)
+        with self.assertRaises(TypeError):
             solve_linear_system((6, 9))
+        with self.assertRaises(TypeError):
             solve_linear_system(69.0)
+        with self.assertRaises(TypeError):
             solve_linear_system({6: 9, 'name': 'George'})
 
 
